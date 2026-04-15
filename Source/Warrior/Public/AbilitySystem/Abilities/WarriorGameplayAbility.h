@@ -12,6 +12,8 @@ enum class EWarriorAbilityActivationPolicy : uint8
 	OnTrigged,
 	OnGiven
 };
+class UPawnCombatComponent;
+class UWarriorAbilitySystemComponent;
 /**
  * 
  */
@@ -28,5 +30,10 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "WarriorAbility")
 	EWarriorAbilityActivationPolicy AbilityActivationPolicy = EWarriorAbilityActivationPolicy::OnTrigged;
-	
+
+	UFUNCTION(BlueprintPure, Category = "WarriorAbility")
+	UPawnCombatComponent* GetPawnCombatComponentFromActorInfo() const;
+
+	UFUNCTION(BlueprintPure, Category = "WarriorAbility")
+	UWarriorAbilitySystemComponent* GetWarriorAbilitySystemComponentFromActorInfo() const;
 };
