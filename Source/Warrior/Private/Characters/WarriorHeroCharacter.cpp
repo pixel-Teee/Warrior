@@ -87,6 +87,12 @@ void AWarriorHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 		this,
 		&AWarriorHeroCharacter::Input_Look
 	);
+
+	WarriorInputComponent->BindAbilityInputAction(InputConfigDataAsset,
+		this,
+		&AWarriorHeroCharacter::Input_AbilityInputPressed,
+		&AWarriorHeroCharacter::Input_AbilityInputReleased
+	);
 }
 
 void AWarriorHeroCharacter::Input_Move(const FInputActionValue& InputActionValue)
@@ -122,6 +128,16 @@ void AWarriorHeroCharacter::Input_Look(const FInputActionValue& InputActionValue
 	{
 		AddControllerPitchInput(-LookAxisVector.Y);
 	}
+}
+
+void AWarriorHeroCharacter::Input_AbilityInputPressed(FGameplayTag InInputTag)
+{
+	WarriorAbilitySystemComponent->OnAbilityInputPressed(InInputTag);
+}
+
+void AWarriorHeroCharacter::Input_AbilityInputReleased(FGameplayTag InInputTag)
+{
+	WarriorAbilitySystemComponent->OnAbilityInputReleased(InInputTag);
 }
 
 void AWarriorHeroCharacter::BeginPlay()
