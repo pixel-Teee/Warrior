@@ -52,7 +52,7 @@ void UWarriorAttributeSet::PostGameplayEffectExecute(const struct FGameplayEffec
 
 		//TODO:Notify the UI
 
-		//TODO:Handle character dealth
+		//TODO:Handle character death
 		if (NewCurrentHealth == 0.f)
 		{
 
