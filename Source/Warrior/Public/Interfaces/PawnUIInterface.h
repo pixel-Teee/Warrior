@@ -9,6 +9,7 @@
 
 class UPawnUIComponent;
 class UHeroUIComponent;
+class UEnemyUIComponent;
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
 class UPawnUIInterface : public UInterface
@@ -28,4 +29,6 @@ public:
 	virtual UPawnUIComponent* GetPawnUIComponent() const = 0;
 	
 	virtual UHeroUIComponent* GetHeroUIComponent() const;
+
+	virtual UEnemyUIComponent* GetEnemyUIComponent() const;
 };

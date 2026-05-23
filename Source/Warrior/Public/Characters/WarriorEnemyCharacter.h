@@ -26,6 +26,10 @@ public:
 	//~ Begin PawnUIInterface Interface.
 	virtual UPawnUIComponent* GetPawnUIComponent() const override;
 	//~ End PawnUIInterface Interface.
+
+	//~ Begin PawnUIInterface Interface.
+	virtual UEnemyUIComponent* GetEnemyUIComponent() const override;
+	//~ Begin PawnUIInterface Interface.
 protected:
 	//~ Begin APawn Interface.
 	virtual void PossessedBy(AController* NewController) override;
