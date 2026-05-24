@@ -19,7 +19,7 @@ void UWarriorWidgetBase::NativeOnInitialized()
 
 void UWarriorWidgetBase::InitEnemyCreatedWidget(AActor* OwningEnemyActor)
 {
-	if (IPawnUIInterface* PawnUIInterface = Cast<IPawnUIInterface>(GetOwningPlayerPawn()))
+	if (IPawnUIInterface* PawnUIInterface = Cast<IPawnUIInterface>(OwningEnemyActor))
 	{
 		UEnemyUIComponent* EnemyUIComponent = PawnUIInterface->GetEnemyUIComponent();
 
